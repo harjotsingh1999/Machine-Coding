@@ -1,12 +1,16 @@
 package SnakeLadder;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
 
 public class InputDriver {
 
     public static void main(String[] args) {
 
         Scanner read = new Scanner(System.in);
+
+        int boardSize = read.nextInt();
 
         int snakeCount = read.nextInt();
         HashMap<Integer, Integer> snakes = new HashMap<>();
@@ -31,7 +35,7 @@ public class InputDriver {
         }
         read.close();
 
-        Game game = new Game(snakes, ladders, players);
+        Game game = new Game(snakes, ladders, players, boardSize);
         game.startGame();
     }
 }
